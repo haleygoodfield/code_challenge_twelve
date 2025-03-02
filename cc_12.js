@@ -22,7 +22,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     metricCardsArray.forEach(card => { // // Use an array method such as .forEach() to update each card’s inner text 
         card.innerText += ' - Updated'; // appending " - Updated" to the current text
-        card.style.backgroundColor = 'pink'; // modif styles (changing the background color)
+        card.style.backgroundColor = 'pink'; // modify styles (changing the background color)
     });
+
+
+    // Task 3: Dynamic Inventory Management – Adding and Removing Items
+    const inventoryList = document.getElementById("inventoryList");
+
+    function addInventoryItem(productName) { // Add a product to the inventory list 
+        const newProduct= document.createElement("li"); // Create a new <li> element representing a product
+        newProduct. textContent = productName;
+
+    //    Eoeoduct Name:"); // Prompt for product name
+        
+      //  if (productName) {
+      //     const newProduct = document.createElement("li"); // Create a new <li> element representing a product
+      //      newProduct.textContent = productName;
+
+        newProduct.setAttribute("class", "product-item"); // Use setAttribute to add a class (e.g., "product-item")
+        newProduct.setAttribute("data-product", productName); // Use setAttribute to add a custom data attribute to the <li>
+
+        newProduct.addEventListener("click", function () { // Write a separate function that removes a specific <li> when it is clicked
+        inventoryList.removeChild(newProduct); // Use removeChild within the inventory list to remove the clicked item
+       });
+
+        inventoryList.appendChild(newProduct); // Append the new product item to the inventory list using appendChild
+        }
+
+        window.addInventoryItem = addInventoryItem;
+   // }
+  //  addProductButton.addEventListener("click", addProduct); // Clicking on button to add a new product item to the inventory list
 });
 
