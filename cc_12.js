@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //Customer Examples 
-    addCustomer("Mr. Milchik");
+    addCustomer("Mr. Milchick");
     addCustomer("Miss Huang");
     addCustomer("Irving B");
 });
