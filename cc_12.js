@@ -52,5 +52,40 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addInventoryItem = addInventoryItem;
    // }
   //  addProductButton.addEventListener("click", addProduct); // Clicking on button to add a new product item to the inventory list
+
+
+    // Task 4: Business Customer Section – Handling Event Bubbling
+    const customerSection = document.getElementById("customerSection"); // Create a nested structure: a parent container with the id "customerSection"
+    if (customerSection) {
+        customerSection.addEventListener("click", () => { // Attach click event listeners to the parent container
+            console.log("Customer Card Clicked");
+        });
+    }
+
+    function addCustomer(name) { // Create a nested structure: multiple child elements with the class "customer-card"
+        if (customerSection) {
+            const card = document.createElement("div");
+
+            card.setAttribute("class", "customer-card"); // Adds class attribute
+           
+            card.innerHTML= `<h3>${name}</h3>`;
+
+            card.addEventListener("click", (event) => { // // Attach click event listeners to each customer card
+                console.log("Customer Card Clicked"); // Log a message (e.g., "Customer card clicked")
+               
+                //Test the behavior by temporarily removing stopPropagation() to verify that, without it, clicking a customer card logs messages from both the customer card and the parent container
+                event.stopPropagation(); // call stopPropagation() so that the parent's event handler does not trigger
+            // 
+            });
+        
+            customerSection.appendChild(card); //Appends the card to the parent container
+        }
+    }
+
+    //Customer Examples 
+    addCustomer("Mr. Milchik");
+    addCustomer("Miss Huang");
+    addCustomer("Irving B");
 });
+
 
