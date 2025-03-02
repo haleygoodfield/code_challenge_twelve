@@ -33,12 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const newProduct= document.createElement("li"); // Create a new <li> element representing a product
         newProduct. textContent = productName;
 
-    //    Eoeoduct Name:"); // Prompt for product name
-        
-      //  if (productName) {
-      //     const newProduct = document.createElement("li"); // Create a new <li> element representing a product
-      //      newProduct.textContent = productName;
-
         newProduct.setAttribute("class", "product-item"); // Use setAttribute to add a class (e.g., "product-item")
         newProduct.setAttribute("data-product", productName); // Use setAttribute to add a custom data attribute to the <li>
 
@@ -49,9 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inventoryList.appendChild(newProduct); // Append the new product item to the inventory list using appendChild
         }
 
-        window.addInventoryItem = addInventoryItem;
-   // }
-  //  addProductButton.addEventListener("click", addProduct); // Clicking on button to add a new product item to the inventory list
+        window.addInventoryItem = addInventoryItem; // Added to display given HTML file code
 
 
     // Task 4: Business Customer Section – Handling Event Bubbling
