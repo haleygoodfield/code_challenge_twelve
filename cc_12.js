@@ -12,6 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Append the new metric card to the dashboard container using appendChild
     dashboardId.appendChild(revenueCard);
-});
 
+
+
+    // Task 2:  Updating Dashboard Metrics – Working with NodeLists and Arrays
+    const metricCards = document.querySelectorAll(".metric-card"); // Use document.querySelectorAll to select all elements with the class "metric-card"
+
+    const metricCardsArray = Array.from(metricCards); // Convert the resulting NodeList into an array using Array.from 
+
+    metricCardsArray.forEach(card => { // // Use an array method such as .forEach() to update each card’s inner text 
+        card.innerText += ' - Updated'; // appending " - Updated" to the current text
+        card.style.backgroundColor = 'pink'; // modif styles (changing the background color)
+    });
+});
 
